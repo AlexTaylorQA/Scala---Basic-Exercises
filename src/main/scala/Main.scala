@@ -62,6 +62,10 @@ object Main
      */
     fizzBuzz("Fizz", "Buzz", 15)
 
+
+    // Similar method that uses pattern matching instead of if statements.
+    fizzBuzzPattern("Fizz", "Buzz", 15)
+
     //
 
   }
@@ -186,5 +190,32 @@ object Main
           }
       }
   }
+
+  def fizzBuzzPattern(inString1: String, inString2: String, inInt: Int) =
+  {
+    val a= 0;
+    for(a <- 1 to inInt)
+    {
+      (a % 3 == 0 && a % 5 == 0) match
+      {
+        case true => println(inString1 + inString2)
+        case false =>
+          (a % 3 == 0) match
+          {
+            case true => println(inString1)
+            case false =>
+              (a % 5 == 0) match
+              {
+                case true => println(inString2)
+                case false => println(a)
+              }
+          }
+      }
+    }
+  }
+
+
+
+
 
 }
