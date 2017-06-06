@@ -53,7 +53,7 @@ object Main
     printString("Hello", 3)
 
     // Method that loops to print a String in a rectangle based on an inputted number.
-    printRectangle("H", 10)
+    printRectangle("H", 5)
 
     /* Method that prints numbers from 1 to a specified number.
        If the number is divisible by 3, print "fizz" instead.
@@ -66,7 +66,16 @@ object Main
     // Similar method that uses pattern matching instead of if statements.
     fizzBuzzPattern("Fizz", "Buzz", 15)
 
-    //
+    // Method that swaps the position of two inputted integers.
+    var b = new Array[Int](2)
+    b = Array(1,2)
+
+    var tmp = swapInts((b))
+
+    tmp match
+    {
+      case c @ Array(x, _*) => println("(" + c(0) + ", " + c(1) + ")")
+    }
 
   }
 
@@ -214,7 +223,20 @@ object Main
     }
   }
 
+  def swapInts(input:Any) : Any =
+  {
+    input match{
+      case (x,y) => (y,x)
+      case List(x,y) => List(y,x)
+      case Array(x,y) => Array(y,x)
 
+      // Handles arrays with more than two indexes
+      case Array(x,y,longArr @ _*) => Array(y, x, longArr)
+      case _ => ("Error")
+
+
+    }
+  }
 
 
 
