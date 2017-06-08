@@ -233,7 +233,7 @@ object Main
       case Array(x,y) => Array(y,x)
 
       // Handles tuples with more than two indexes
-      case Tuple(x,y, longTup @ _*) => Tuple(y,x, longTup)
+      case (x, y, _*) => (y, x)
 
       // Handles arrays with more than two indexes
       case Array(x,y,longArr @ _*) => Array(y, x, longArr)
