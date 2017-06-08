@@ -1,0 +1,7 @@
+def morse2english(string: String): Char = {string match {case ".-" => 'A' case "-..." => 'B' case "-.-." => 'C' case "-.." => 'D' case "." => 'E' case "..-." => 'F' case "--." => 'G' case "...." => 'H' case ".." => 'I' case ".---" => 'J' case "-.-" => 'K' case ".-.." => 'L' case "--" => 'M' case "-." => 'N' case "---" => 'O' case ".--." => 'P' case "--.-" => 'Q' case ".-." => 'R' case "..." => 'S' case "-" => 'T' case "..-" => 'U' case "...-" => 'V' case ".--" => 'W' case "-..-" => 'X' case "-.--" => 'Y' case "--.." => 'Z' case "/" => ' '}}
+var morseString: String = ".... . .-.. .-.. --- / -.. .- .. .-.. -.-- / .--. .-. --- --. .-. .- -- -- . .-. / --. --- --- -.. / .-.. ..- -.-. -.- / --- -. / - .... . / -.-. .... .- .-.. .-.. . -. --. . ... / - --- -.. .- -.--"
+var morseArray = morseString.split(" "); for (index <- 0 to morseArray.length - 1) {print(morse2english(morseArray(index)))}                                           /* this goes through the index of the morse
+                                            array whih passed through the morse2english case match*/
+
+java.util.TimeZone.getAvailableIDs()
+//If we had used a mpa instead of a case match we could have switched the values with a map.swap
